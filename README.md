@@ -22,6 +22,8 @@ The **Messaging & Chat Upload App** is a dynamic web application designed to fac
   - [Backend Implementation](#backend-implementation)
     - [API Endpoints](#api-endpoints)
   - [License](#license)
+    - [Gif](#gif)
+  - [](#)
   - [Start](#start)
   - [Learn More](#learn-more)
   - [Deploy on Vercel](#deploy-on-vercel)
@@ -152,6 +154,12 @@ The server runs on `http://localhost:8080` and interacts with the front end to m
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
+
+### Gif
+
+Here is an expected gif of the preview of the App(Messaging and Chat Upload)
+
+## ![Messaging and Chat Upload gif](./public/messages&chat.gif)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
