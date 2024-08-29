@@ -55,8 +55,9 @@ application. */
 //   return <Messages messages={messages} />;
 // }
 
-export default function MessagesPage() {
-  const messages = getMessages();
+export default async function MessagesPage() {
+  //const messages = getMessages();
+  const messages = await getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;
