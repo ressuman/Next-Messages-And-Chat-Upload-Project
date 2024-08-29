@@ -1,5 +1,6 @@
 import Header from "@/components/header/header";
 import "./globals.css";
+import PropTypes from "prop-types";
 
 export const metadata = {
   title: "Messaging & Chat Upload App",
@@ -16,3 +17,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

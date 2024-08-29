@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 // export default async function MessagesLayout({ children }) {
 //   const response = await fetch("http://localhost:8080/messages", {
 //     headers: {
@@ -40,3 +42,7 @@ export default async function MessagesLayout({ children }) {
     </>
   );
 }
+
+MessagesLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

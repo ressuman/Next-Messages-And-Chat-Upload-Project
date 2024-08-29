@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Messages({ messages }) {
   return (
     <ul className="messages">
@@ -7,3 +9,12 @@ export default function Messages({ messages }) {
     </ul>
   );
 }
+
+Messages.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
