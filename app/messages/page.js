@@ -1,4 +1,5 @@
 import Messages from "@/components/messages/messages";
+import { getMessages } from "@/lib/messages/messages";
 //import { unstable_noStore } from "next/cache";
 
 /** same as setting the revalidate in the next object of the headers of the fetch*/
@@ -17,34 +18,45 @@ this constant would depend on the rest of the codebase and how it is utilized wi
 application. */
 //export const dynamic = "force-dynamic"; /** OR "force-static" */
 
-export default async function MessagesPage() {
-  unstable_noStore(); /* The `unstable_noStore()` function is used to indicate that the response from the fetch request
-should not be stored in the cache. This is similar to setting the cache control header to
-`no-store`, which means that the response should not be stored in any cache, including browser cache
-or intermediary caches. This ensures that a fresh response is always fetched from the server instead
-of using a cached response. */
-  const response = await fetch("http://localhost:8080/messages", {
-    /* The `headers: { "X-ID": "page" }` part in the fetch request is setting a custom header with the
-    key "X-ID" and the value "page". Custom headers like this can be used to send additional
-    information along with the request to the server. */
-    headers: {
-      "X-ID": "page",
-    },
-    /* The line `cache: "no-store",` in the fetch request is setting the cache control directive to
-  "no-store". This means that the response from the fetch request should not be stored in any cache,
-  including browser cache or intermediary caches. By specifying "no-store", the browser and any
-  intermediate caches along the request-response path are instructed not to store the response,
-  ensuring that a fresh response is always fetched from the server whenever the resource is
-  requested. */
-    //cache: "no-store",
-    /* The `next: { revalidate: 5 }` part in the fetch request is configuring the revalidation behavior
-    for fetching data. In Next.js, the `next` object can be used to specify additional options
-    related to data fetching and caching. */
-    // next: {
-    //   revalidate: 5,
-    // },
-  });
-  const messages = await response.json();
+// export default async function MessagesPage() {
+//   unstable_noStore(); /* The `unstable_noStore()` function is used to indicate that the response from the fetch request
+// should not be stored in the cache. This is similar to setting the cache control header to
+// `no-store`, which means that the response should not be stored in any cache, including browser cache
+// or intermediary caches. This ensures that a fresh response is always fetched from the server instead
+// of using a cached response. */
+//   const response = await fetch("http://localhost:8080/messages", {
+//     /* The `headers: { "X-ID": "page" }` part in the fetch request is setting a custom header with the
+//     key "X-ID" and the value "page". Custom headers like this can be used to send additional
+//     information along with the request to the server. */
+//     headers: {
+//       "X-ID": "page",
+//     },
+//     /* The line `cache: "no-store",` in the fetch request is setting the cache control directive to
+//   "no-store". This means that the response from the fetch request should not be stored in any cache,
+//   including browser cache or intermediary caches. By specifying "no-store", the browser and any
+//   intermediate caches along the request-response path are instructed not to store the response,
+//   ensuring that a fresh response is always fetched from the server whenever the resource is
+//   requested. */
+//     //cache: "no-store",
+//     /* The `next: { revalidate: 5 }` part in the fetch request is configuring the revalidation behavior
+//     for fetching data. In Next.js, the `next` object can be used to specify additional options
+//     related to data fetching and caching. */
+//     // next: {
+//     //   revalidate: 5,
+//     //   tags: ["msg"],
+//     // },
+//   });
+//   const messages = await response.json();
+
+//   if (!messages || messages.length === 0) {
+//     return <p>No messages found</p>;
+//   }
+
+//   return <Messages messages={messages} />;
+// }
+
+export default function MessagesPage() {
+  const messages = getMessages();
 
   if (!messages || messages.length === 0) {
     return <p>No messages found</p>;
