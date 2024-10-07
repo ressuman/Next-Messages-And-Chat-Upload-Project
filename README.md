@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Messaging & Chat Upload App** is a dynamic web application designed to facilitate seamless communication between users through messaging and chat features. The app allows users to send and receive messages and includes the capability to upload and share files within the chat environment. This project is built using Next.js with a focus on server-side rendering, dynamic routing, and efficient data management using SQLite.
+The **Messaging & Chat Upload App** is a dynamic web application designed to facilitate seamless communication between users through messaging and chat features. The app allows users to send and receive messages and includes the capability to upload and share files within the chat environment. This project is built using Next.js with a focus on server-side rendering, dynamic routing, and efficient data management using Supabase.
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ The **Messaging & Chat Upload App** is a dynamic web application designed to fac
 - **Messaging System**: Send and receive messages in real-time.
 - **Chat Uploads**: Upload and share files within the chat.
 - **Next.js Integration**: Utilizes Next.js features like server-side rendering and dynamic routing.
-- **SQLite Database**: Manages messages using SQLite for quick and reliable storage.
+- **Supabase Database**: Manages messages using Postgre SQL for quick and reliable storage.
 - **Optimized Caching**: Advanced caching strategies for efficient data retrieval.
 - **Customizable Layout**: Modular components and layouts for easy customization.
 
@@ -79,7 +79,7 @@ The **Messaging & Chat Upload App** is a dynamic web application designed to fac
 ### Prerequisites
 
 - **Node.js**: Ensure Node.js is installed on your machine.
-- **SQLite**: SQLite database is used for managing messages.
+- **Supabase**: Supabase database is used for managing messages.
 
 ### Installation
 
@@ -96,8 +96,8 @@ The **Messaging & Chat Upload App** is a dynamic web application designed to fac
    npm install
    ```
 
-3. **Set up the SQLite database**:
-   The app uses an SQLite database named `messages.db`. Ensure the database is correctly initialized:
+3. **Set up the Supabase database**:
+   The app uses an Supabase database named `messages.db`. Ensure the database is correctly initialized:
 
    ```bash
    npm run setup-db
